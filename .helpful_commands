@@ -1,0 +1,12 @@
+docker run -d -p 8881:80 -v $PWD/index1.html:/usr/share/caddy/index.html caddy
+docker run -it --network caddytest docker/getting-started /bin/sh
+
+
+docker run -d --network caddytest --name caddy1 -v $PWD/index1.html:/usr/share/caddy/index.html caddy
+docker run -d --network caddytest --name caddy2 -v $PWD/index2.html:/usr/share/caddy/index.html caddy
+
+go mod init github.com/Xaitan80/my_docker
+
+GOOS=linux GOARCH=amd64 go build
+
+minikube start
