@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: synergychat-crawler
+  namespace: crawler
   name: synergychat-crawler
 spec:
   replicas: 1
